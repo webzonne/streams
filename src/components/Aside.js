@@ -1,42 +1,119 @@
-import React from 'react'
+import React, {useState} from 'react'
 import logo from '../img/logo.jpg'
+import logoMobile from '../img/logo-mobile.jpg'
+import iconItems from '../img/icon-items.jpg'
 
 export default function Aside() {
+  const [activeBurguer, setActiveBurguer] = useState(false)
+
+  const handleBurguer = ()=>{
+    setActiveBurguer(!activeBurguer)
+  }
+  const handleTouch = (e)=>{
+    if (e.touches[0].clientX < window.innerWidth - 100) {
+      setActiveBurguer(false)
+    }
+  }
   return (
     <div>
-        <aside className="flex w-[245px] bg-blue-200">
-          {/* MOBILE */}
+        <aside onTouchMove={handleTouch} className={`${activeBurguer ?'w-10/12 fixed':'w-[130px] static'} sm:static sm:w-[245px] h-full bg-blue-200`}>
           <div className=''>
-            {/* LOGO */}
-              <div>
-
-              </div>
-            {/* ITEMS */}
-            <div>
-
+            {/* LOGO MOBILE*/}
+            <div className='cursor-pointer pt-2 sm:hidden w-full text-center mx-auto'>
+            <img className='mx-auto' src={logoMobile} alt='logo'/>
             </div>
-          </div>
-          {/* DESK */}
-          <div className=''>
-            {/* LOGO */}
-            <div className='text-center mx-auto'>
+            <div className='hidden sm:block text-center mx-auto'>
               <img className='mx-auto' src={logo} alt='logo'/>
             </div>
             {/* ITEMS */}
             <ul className='items mt-5 mx-4'>
-                <li>Dashboard</li>
-                <li>Tienda</li>
-                <li>Notificaciones</li>
-                <li>Ventas</li>
-                <li>Clientes</li>
-                <li>Productos</li>
-                <li>Proveedores</li>
-                <li>Usuarios</li>
-                <li>Publicidad</li>
-                <li>Tutoriales</li>
-                <li>Descargar Apk</li>
-                <li>Metodos de pagos</li>
-                <li>Ajustes</li>
+                <li onClick={handleBurguer}>
+                  <div className='flex gap-1 items-center'>
+                  <div>
+                    <img src={iconItems} alt='icon'/>
+                  </div>
+                  <div className={`${activeBurguer ?'block':'hidden'} sm:block`}>
+                    Dashboard
+                  </div>
+                  </div>
+                </li>
+
+                <li onClick={handleBurguer} >
+                  <div className='flex gap-1 items-center'>
+                  <div>
+                    <img src={iconItems} alt='icon'/>
+                  </div>
+                  <div className={`${activeBurguer ?'block':'hidden'} sm:block`}>
+                  Tienda
+                  </div>
+                  </div>
+                </li>
+
+                <li onClick={handleBurguer}>
+                  <div className='flex gap-1 items-center'>
+                  <div>
+                    <img src={iconItems} alt='icon'/>
+                  </div>
+                  <div className={`${activeBurguer ?'block':'hidden'} sm:block`}>
+                  Notificaciones
+                  </div>
+                  </div>
+                </li>
+
+                <li onClick={handleBurguer}>
+                  <div className='flex gap-1 items-center'>
+                  <div>
+                    <img src={iconItems} alt='icon'/>
+                  </div>
+                  <div className={`${activeBurguer ?'block':'hidden'} sm:block`}>
+                  Notificaciones
+                  </div>
+                  </div>
+                </li>
+
+                <li onClick={handleBurguer}>
+                  <div className='flex gap-1 items-center'>
+                  <div>
+                    <img src={iconItems} alt='icon'/>
+                  </div>
+                  <div className={`${activeBurguer ?'block':'hidden'} sm:block`}>
+                  Ventas
+                  </div>
+                  </div>
+                </li>
+
+                <li onClick={handleBurguer}>
+                  <div className='flex gap-1 items-center'>
+                  <div>
+                    <img src={iconItems} alt='icon'/>
+                  </div>
+                  <div className={`${activeBurguer ?'block':'hidden'} sm:block`}>
+                  Notificaciones
+                  </div>
+                  </div>
+                </li>
+
+                <li onClick={handleBurguer}>
+                  <div className='flex gap-1 items-center'>
+                  <div>
+                    <img src={iconItems} alt='icon'/>
+                  </div>
+                  <div className={`${activeBurguer ?'block':'hidden'} sm:block`}>
+                  Notificaciones
+                  </div>
+                  </div>
+                </li>
+
+                <li onClick={handleBurguer}>
+                  <div className='flex gap-1 items-center'>
+                  <div>
+                    <img src={iconItems} alt='icon'/>
+                  </div>
+                  <div className={`${activeBurguer ?'block':'hidden'} sm:block`}>
+                  Notificaciones
+                  </div>
+                  </div>
+                </li>
               </ul>
           </div>
     

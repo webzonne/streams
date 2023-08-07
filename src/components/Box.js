@@ -4,7 +4,7 @@ export default function Box() {
   return (
     <div>
       {/* BOX */}
-      <div className="border p-6">
+      <div className="w-1/2 mx-auto sm:w-full border p-6">
         <p className="text-center">TITULO</p>
         <img src={items} alt="items" />
         <div className="flex">

@@ -9,7 +9,7 @@ export default function Login() {
   }
   return (
     <div className='w-full flex justify-center items-center h-screen bg-black bg-opacity-50'>
-      <form onSubmit={handleSubmit} className='w-1/4 bg-white rounded-sm shadow-2xl p-6'>
+      <form onSubmit={handleSubmit} className='w-8/12 sm:w-1/2 lg:w-1/4 bg-white rounded-sm shadow-2xl p-6'>
         <label>Usuario</label><br/>
         <input className='border' type='text' name='user'/><br/>
         <label>Contrasena</label><br />

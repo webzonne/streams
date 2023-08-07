@@ -15,8 +15,8 @@ const [formActive, setFormActive] = useState(false)
 const [datos, setDatos] = useState(init)
 const [plataformas, setPlataformas] = useState([])
 const [fields, setFields] = useState([])
-const [user,setUser] = useState()
-const [pass,setPass] = useState()
+const [user,setUser] = useState('')
+const [pass,setPass] = useState('')
 
 
 // FUNCIONES
@@ -48,12 +48,22 @@ const handleChange = (e)=>{
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
 
 // RECOGER VALORES DE INPUT DE CAMPOS PERSONALIZADOS
-const handleChangeFields = (e, index)=>{
+const handleChangeFieldsPass = (e, index)=>{
     const { name, value } = e.target;
     const updatedFields = [...fields];
     updatedFields[index] = { ...updatedFields[index], [name]: value };
     setFields(updatedFields);
     setDatos({ ...datos, campos: updatedFields });
+    console.log('pass')
+}
+
+const handleChangeFieldsUser = (e, index)=>{
+  const { name, value } = e.target;
+  const updatedFields = [...fields];
+  updatedFields[index] = { ...updatedFields[index], [name]: value };
+  setFields(updatedFields);
+  setDatos({ ...datos, campos: updatedFields });
+  console.log('user')
 }
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -73,16 +83,30 @@ const addFields = (e)=>{
 }
 // ELIMINAR CAMPOS
 const handleDeleteFields = (e, index)=>{
-    e.preventDefault()
+    e.preventDefault();
     const updatedFields = [...fields];
     updatedFields.splice(index, 1);
+    const updatedCampos = [...datos.campos];
+    updatedCampos.splice(index, 1);
     setFields(updatedFields);
+    setDatos({ ...datos, campos: updatedCampos });
 }
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // ENVIAR DATOS
 const handleSubmit = (e)=>{
     e.preventDefault()
+      const updatedCampos = datos.campos.map((campo) => {
+        const updatedCampo = { ...campo };
+        if (!updatedCampo.usuario) {
+            updatedCampo.usuario = RandomName();
+        }
+        if (!updatedCampo.contrasena) {
+            updatedCampo.contrasena = generateRandomPassword();
+        }
+        return updatedCampo;
+    });
     setPlataformas([...plataformas, datos]);
+    setPlataformas([...plataformas, { ...datos, campos: updatedCampos }]);
     setDatos(init)
     setFields([])
     handleClick()
@@ -104,19 +128,20 @@ useEffect(()=>{
           Crear plataforma
         </button>
       </div>
-      <div className={`${formActive ? 'null':'hidden'}`}>
+      <div>
         <Form
         datos={datos}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         handleClick={handleClick}
-        handleChangeFields={handleChangeFields}
         addFields={addFields}
         handleDeleteFields={handleDeleteFields}
+        handleChangeFieldsPass={handleChangeFieldsPass}
+        handleChangeFieldsUser={handleChangeFieldsUser}
         fields={fields}
         user={user}
         pass={pass}
-         
+        formActive={formActive}    
         />
       </div>
 

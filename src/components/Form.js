@@ -1,13 +1,14 @@
 import React from 'react'
 
-export default function Form({handleClick, handleChange, handleChangeFields, handleSubmit, handleDeleteFields, addFields, fields, pass, user, datos, }) {
+export default function Form({handleClick, handleChange, handleChangeFieldsUser, handleChangeFieldsPass, handleSubmit, handleDeleteFields, addFields, fields, pass, user, datos, formActive }) {
    
 
     // FUNCIONES
    
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="relative overflow-y-auto h-[500px] w-4/12 bg-white pt-12 pb-6 px-6 rounded-md shadow-lg transform">
+    <div className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center ${formActive ? 'opacity-100 pointer-events-auto' : 'opacity-0 transition-opacity pointer-events-none'}`}>
+      <div className={`relative overflow-y-auto h-[500px] w-4/12 bg-white pt-12 pb-6 px-6 rounded-md shadow-lg transform ${formActive ? 'scale-y-100' : 'scale-y-0'} transition-transform duration-300`}>
+
         <div className="absolute top-0 right-0">
           <button onClick={handleClick}>
             <svg
@@ -73,9 +74,9 @@ export default function Form({handleClick, handleChange, handleChangeFields, han
                         </button>
                     </div>
                     <label>Usuario</label><br/>
-                    <input onChange={(e)=> handleChangeFields(e, index)} className='border' placeholder={user} type='text' name='usuario'/><br/>
+                    <input onChange={(e)=> handleChangeFieldsUser(e, index)} className='border' placeholder={user} type='text' name='usuario'/><br/>
                     <label>Contrasena</label><br/>
-                    <input onChange={(e)=> handleChangeFields(e, index)} className='border' placeholder={pass} type='text' name='contrasena'/>
+                    <input onChange={(e)=> handleChangeFieldsPass(e, index)} className='border' placeholder={pass} type='text' name='contrasena'/>
                 </div>
           )})}
 

@@ -7,7 +7,7 @@ export default function Aside() {
   const [activeBurguer, setActiveBurguer] = useState(false)
 
   const handleBurguer = ()=>{
-    setActiveBurguer(!activeBurguer)
+    setActiveBurguer(true)
   }
   const handleTouch = (e)=>{
     if (e.touches[0].clientX < window.innerWidth - 100) {

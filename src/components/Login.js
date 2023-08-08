@@ -8,16 +8,74 @@ export default function Login() {
     navigate('/home');
   }
   return (
-    <div className='w-full flex justify-center items-center h-screen bg-black bg-opacity-50'>
-      <form onSubmit={handleSubmit} className='w-8/12 sm:w-1/2 lg:w-1/4 bg-white rounded-sm shadow-2xl p-6'>
-        <label>Usuario</label><br/>
-        <input className='border' type='text' name='user'/><br/>
-        <label>Contrasena</label><br />
-        <input className='border' type='text' name='user'/><br/>
-        <div className='mt-4'>
-          <button className='bg-green-300 py-2 px-4'>Iniciar session</button>
-        </div>
-      </form>
+<div className="flex h-screen justify-center items-center">
+      <div className="content">
+        <nav className="text-center">
+          <a href="https://cupladiga.net/" rel="nofollow">
+            <img
+              className="max-w-none text-center mx-auto"
+              width={"80px"}
+              src="https://cupladiga.net/box-containt-assets/content-src/icono.png"
+              alt="Cupladiga"
+            />
+          </a>
+        </nav>
+        <div className='border-2 rounded-md border-fuchsia-600 p-6'>
+        <p className="text-center mb-4 text-xl text-fuchsia-600">CUPLADIGA</p>
+        <p className="text-center text-gray-500 text-sm mb-8">
+          Accede a <b>Todos</b> nuestros servicios en un solo lugar.
+        </p>
+            <div className="bg-fuchsia-600 py-4 px-4 rounded-md">
+              <div className="cajaform-in">
+                <form
+                  method="POST"
+                  action="/"
+                  id="login_form"
+                  name="login_form"
+                  onSubmit={handleSubmit}
+                >
+                  <label htmlFor="inputPassword5" className="text-white mb-2">
+                    Usuario
+                  </label>
+                  <br />
+                  <input
+                    className="outline-none rounded-md h-8 border my-2 w-full"
+                    type="text"
+                    name="email"
+                    placeholder="Ingresa tu usuario"
+                    aria-label="Usuario"
+                  />
+                  <br />
+                  <label htmlFor="inputPassword5" className="text-white ">
+                    Password
+                  </label>
+                  <br />
+                  <input
+                    type="password"
+                    id="inputPassword5"
+                    name="password"
+                    className="outline-none rounded-md h-8 border mt-2 w-full"
+                    placeholder="*******"
+                    aria-describedby="password"
+                  />
+                  <br />
+                  <div className="text-white mb-4">Olvido de clave</div>
+                  <div className="area-btn-form">
+                    <button
+                      className="bg-white rounded-md w-full py-2 text-fuchsia-600"
+                      id="submit_btn"
+                      name="submit_btn"
+                    >
+                      INGRESAR
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            </div>
+        
+      <p className='text-gray-500 text-center mt-4'>Explora todo lo que tenemos para ti</p>
+      </div>
     </div>
   )
 }

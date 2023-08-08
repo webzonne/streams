@@ -18,104 +18,98 @@ export default function Aside() {
     <div>
         <aside onTouchMove={handleTouch} className={`${
         activeBurguer ? 'fixed w-[300px] sm:w-[245px]' :'w-[72px]'
-      } h-full fixed sm:static sm:w-[245px] bg-blue-200 transition-all duration-300`}>
+      } h-full fixed sm:static sm:w-[245px] bg-fuchsia-400 transition-all duration-300`}>
           <div className=''>
             {/* LOGO MOBILE*/}
             <div className='cursor-pointer pt-2 sm:hidden w-full text-center mx-auto'>
-            <img className='mx-auto max-w-none' width={'50px'} src={logoMobile} alt='logo'/>
+            <img className='mx-auto max-w-none' width={'50px'} src='https://cupladiga.net/box-containt-assets/content-src/icono.png' alt='logo'/>
             </div>
             <div className='hidden sm:block text-center mx-auto'>
-              <img className='mx-auto'  src={logo} alt='logo'/>
+              <img className='mx-auto pt-4'  width={'80px'}  src='https://cupladiga.net/box-containt-assets/content-src/icono.png' alt='logo'/>
             </div>
             {/* ITEMS */}
             <ul className='items mt-5 mx-4'>
-                <li onClick={handleBurguer}>
-                  <div className='flex gap-1 items-center'>
+                <li className='text-white cursor-pointer' onClick={handleBurguer}>
+                  <div className='flex gap-2 items-center'>
                   <div>
-                    <img className='max-w-none' width={'45px'} src={iconItems} alt='icon'/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"></path></svg>
                   </div>
                   <div className={`${activeBurguer ?'block':'hidden'} sm:block transition-all duration-300`}>
                     Dashboard
                   </div>
                   </div>
                 </li>
-
-                <li onClick={handleBurguer} >
-                  <div className='flex gap-1 items-center'>
-                  <div className='w-[45px]'>
-                    <img className='max-w-none' width={'45px'} src={iconItems} alt='icon'/>
+                <li className='text-white cursor-pointer' onClick={handleBurguer}>
+                  <div className='flex gap-2 items-center'>
+                  <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"></path></svg>
                   </div>
                   <div className={`${activeBurguer ?'block':'hidden'} sm:block transition-all duration-300`}>
-                  Tienda
+                    Dashboard
                   </div>
                   </div>
                 </li>
-
-                <li onClick={handleBurguer}>
-                  <div className='flex gap-1 items-center'>
-                  <div className='w-[45px]'>
-                    <img className='max-w-none' width={'45px'} src={iconItems} alt='icon'/>
+                <li className='text-white cursor-pointer' onClick={handleBurguer}>
+                  <div className='flex gap-2 items-center'>
+                  <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"></path></svg>
                   </div>
                   <div className={`${activeBurguer ?'block':'hidden'} sm:block transition-all duration-300`}>
-                  Notificaciones
+                    Dashboard
                   </div>
                   </div>
                 </li>
-
-                <li onClick={handleBurguer}>
-                  <div className='flex gap-1 items-center'>
-                  <div className='w-[45px]'>
-                    <img className='max-w-none' width={'45px'} src={iconItems} alt='icon'/>
+                <li className='text-white cursor-pointer' onClick={handleBurguer}>
+                  <div className='flex gap-2 items-center'>
+                  <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"></path></svg>
                   </div>
                   <div className={`${activeBurguer ?'block':'hidden'} sm:block transition-all duration-300`}>
-                  Notificaciones
+                    Dashboard
                   </div>
                   </div>
                 </li>
-
-                <li onClick={handleBurguer}>
-                  <div className='flex gap-1 items-center'>
-                  <div className='w-[45px]'>
-                    <img className='max-w-none' width={'45px'} src={iconItems} alt='icon'/>
+                <li className='text-white cursor-pointer' onClick={handleBurguer}>
+                  <div className='flex gap-2 items-center'>
+                  <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"></path></svg>
                   </div>
                   <div className={`${activeBurguer ?'block':'hidden'} sm:block transition-all duration-300`}>
-                  Ventas
+                    Dashboard
                   </div>
                   </div>
                 </li>
-
-                <li onClick={handleBurguer}>
-                  <div className='flex gap-1 items-center'>
-                  <div className='w-[45px]'>
-                    <img className='max-w-none' width={'45px'} src={iconItems} alt='icon'/>
+                <li className='text-white cursor-pointer' onClick={handleBurguer}>
+                  <div className='flex gap-2 items-center'>
+                  <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"></path></svg>
                   </div>
                   <div className={`${activeBurguer ?'block':'hidden'} sm:block transition-all duration-300`}>
-                  Notificaciones
+                    Dashboard
                   </div>
                   </div>
                 </li>
-
-                <li onClick={handleBurguer}>
-                  <div className='flex gap-1 items-center'>
-                  <div className='w-[45px]'>
-                    <img className='max-w-none' width={'45px'} src={iconItems} alt='icon'/>
+                <li className='text-white cursor-pointer' onClick={handleBurguer}>
+                  <div className='flex gap-2 items-center'>
+                  <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"></path></svg>
                   </div>
                   <div className={`${activeBurguer ?'block':'hidden'} sm:block transition-all duration-300`}>
-                  Notificaciones
+                    Dashboard
                   </div>
                   </div>
                 </li>
-
-                <li onClick={handleBurguer}>
-                  <div className='flex gap-1 items-center'>
-                  <div className='w-[45px]'>
-                    <img className='max-w-none' width={'45px'} src={iconItems} alt='icon'/>
+                <li className='text-white cursor-pointer' onClick={handleBurguer}>
+                  <div className='flex gap-2 items-center'>
+                  <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16"><path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"></path></svg>
                   </div>
                   <div className={`${activeBurguer ?'block':'hidden'} sm:block transition-all duration-300`}>
-                  Notificaciones
+                    Dashboard
                   </div>
                   </div>
                 </li>
+                
               </ul>
           </div>
     

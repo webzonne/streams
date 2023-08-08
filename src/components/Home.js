@@ -19,7 +19,7 @@ export default function Home() {
           {/* Cabecera */}
          <Cabecera/>
           {/* CONTENT */}
-          <div>
+          <div className=''>
          <Content/>
           </div>
         </div>

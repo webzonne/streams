@@ -4,7 +4,7 @@ export default function Cabecera() {
   return (
     <div>
          {/* CABECERA */}
-        <div className="bg-gray-400 h-[70px]"></div>
+        <div className="bg-white h-[70px]"></div>
     </div>
   )
 }

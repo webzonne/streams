@@ -78,7 +78,7 @@ export default function Login() {
                   />
                   <br />
                   
-                  <div className="area-btn-form">
+                  <div className="mt-4">
                     <button
                       className="bg-white rounded-md w-full py-2 text-fuchsia-600"
                       id="submit_btn"

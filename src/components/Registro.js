@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, {useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../context/TaskContext';
 
@@ -17,7 +17,7 @@ export default function Register() {
     setRegistro([...registro, user]);
     localStorage.setItem('registro', JSON.stringify([...registro, usuario]))
     console.log(registro)
-    // navigate('/');
+    navigate('/');
   }
 
   const handleChange = (e)=>{

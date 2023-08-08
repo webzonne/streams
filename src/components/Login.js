@@ -38,6 +38,9 @@ export default function Login() {
   const handlePass = ()=>{
     navigate('/pass')
   }
+  const handleSubmitRegister = ()=>{
+    navigate('/registro')
+  }
 
 
   return (
@@ -102,7 +105,7 @@ export default function Login() {
                       INGRESAR
                     </button>
                   </div>
-                  <div onClick={handleSubmit} className="cursor-pointer text-white text-center mt-2 mb-4">Registrarse</div>
+                  <div onClick={handleSubmitRegister} className="cursor-pointer text-white text-center mt-2 mb-4">Registrarse</div>
                 </form>
               </div>
             </div>

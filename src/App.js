@@ -6,8 +6,7 @@ import Password from './components/Password'
 // import { Switch, Route } from 'react-router-dom';
 // import Nav from '../src/components/Nav';
 // import Contenido from '../src/components/Contenido';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 
 function App() {
@@ -26,8 +25,6 @@ function App() {
       </Router>
     </>
   );
-
 }
-
 export default App;
 

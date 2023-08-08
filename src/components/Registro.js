@@ -1,28 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useGlobalContext } from '../context/TaskContext';
 
+export default function Register() {
+    const { usuario, setUsuario, registro, setRegistro } = useGlobalContext();
 
-export default function Login() {
-
-  const init = {
-    email:'',
-    pass:''
-  }
-  const [usuario, setUsuario] = useState(init)
-  const [registro, setRegistro] = useState([])
+    useEffect(() => {
+        console.log(registro);
+      }, [registro]);
 
   const navigate = useNavigate();
-  // funciones
-
+  // funciones  
   const handleSubmit = (e)=>{
+    const user = usuario
     e.preventDefault()
-    // setPlataformas([...plataformas, usuarios]);
-    navigate('/home');
+    setRegistro([...registro, user]);
+    localStorage.setItem('registro', JSON.stringify([...registro, usuario]))
+    console.log(registro)
+    // navigate('/');
   }
+
   const handleChange = (e)=>{
     const {name, value} = e.target
+    setUsuario({...usuario, [name]:value})
+    console.log(usuario)
   }
-
+  
   return (
 <div className="flex h-screen justify-center items-center">
       <div className="content">
@@ -59,8 +62,8 @@ export default function Login() {
                     type="text"
                     name="email"
                     placeholder="Ingresa tu usuario"
-                    aria-label="Usuario"
-                    onClick={handleChange}
+                    aria-label="email"
+                    onChange={handleChange}
                   />
                   <br />
                   <label htmlFor="inputPassword5" className="text-white ">
@@ -70,11 +73,11 @@ export default function Login() {
                   <input
                     type="password"
                     id="inputPassword5"
-                    name="pass"
+                    name="contrasena"
                     className="outline-none rounded-md h-8 border mt-2 w-full"
                     placeholder="*******"
                     aria-describedby="password"
-                    onClick={handleChange}
+                    onChange={handleChange}
                   />
                   <br />
                   

@@ -1,13 +1,30 @@
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from 'react';
 
-export const TaskContext = createContext()
+const GlobalContext = createContext();
 
-export const useTask = ()=>{
-    useContext(TaskContext)
-}
+export const GlobalProvider = ({ children }) => {
+  const initUser = {
+    email: '',
+    contrasena: ''
+  };
 
-export const TaskProvider = ({children})=>{
-    const [data, setData] = useState('test')
+  const storedRegistro = JSON.parse(localStorage.getItem('registro')) || [];
 
-    return <TaskContext.Provider value={{data, setData}}>{children}</TaskContext.Provider>
-}
+  const [usuario, setUsuario] = useState(initUser);
+  const [registro, setRegistro] = useState(storedRegistro);
+
+  const values = {
+    usuario,
+    setUsuario,
+    registro,
+    setRegistro
+  };
+
+  return (
+    <GlobalContext.Provider value={values}>
+      {children}
+    </GlobalContext.Provider>
+  );
+};
+
+export const useGlobalContext = () => useContext(GlobalContext);

@@ -6,18 +6,16 @@ import Password from './components/Password'
 // import { Switch, Route } from 'react-router-dom';
 // import Nav from '../src/components/Nav';
 // import Contenido from '../src/components/Contenido';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 
 function App() {
-
+    
+  // funciones
 
   return (
     <>
-    {/* <Switch>
-      <Route exact path="/home/" component={Home} />
-      <Route exact path="/" component={Login} />
-    </Switch> */}
       <Router>
         <Routes>
           <Route path="/home" element={<Home />} />

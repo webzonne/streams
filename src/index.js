@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { TaskProvider } from './context/TaskContext';
+import { GlobalProvider } from './context/TaskContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <TaskProvider>
+    <GlobalProvider>
      <App />
-     </TaskProvider>
+     </GlobalProvider>
   </React.StrictMode>
 );
 

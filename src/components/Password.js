@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 
-export default function Login() {
+export default function Register() {
 
   const init = {
     email:'',

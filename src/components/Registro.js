@@ -19,20 +19,14 @@ export default function Login() {
     // setPlataformas([...plataformas, usuarios]);
     navigate('/home');
   }
-
-  const handleRegister = (e)=>{
-    e.preventDefault()
-    navigate('/registro');
-  }
-
   const handleChange = (e)=>{
     const {name, value} = e.target
   }
 
   return (
-<div className="flex mt-12 h-screen justify-center items-center">
+<div className="flex h-screen justify-center items-center">
       <div className="content">
-        <nav className="absolute top-2 right-0 left-0 mx-auto z-10 text-center">
+        <nav className="text-center">
           <a href="https://cupladiga.net/" rel="nofollow">
             <img
               className="max-w-none text-center mx-auto"
@@ -42,7 +36,7 @@ export default function Login() {
             />
           </a>
         </nav>
-        <div className='relative border-2 rounded-md border-fuchsia-600 p-6'>
+        <div className='border-2 rounded-md border-fuchsia-600 p-6'>
         <p className="text-center mb-4 text-xl text-fuchsia-600">CUPLADIGA</p>
         <p className="text-center text-gray-500 text-sm mb-8">
           Accede a <b>Todos</b> nuestros servicios en un solo lugar.
@@ -83,17 +77,16 @@ export default function Login() {
                     onClick={handleChange}
                   />
                   <br />
-                  <div className="text-white mb-4">Olvido de clave</div>
+                  
                   <div className="area-btn-form">
                     <button
                       className="bg-white rounded-md w-full py-2 text-fuchsia-600"
                       id="submit_btn"
                       name="submit_btn"
                     >
-                      INGRESAR
+                      REGISTRARSE
                     </button>
                   </div>
-                  <div onClick={handleRegister} className="cursor-pointer text-white text-center mt-2 mb-4">Registrarse</div>
                 </form>
               </div>
             </div>

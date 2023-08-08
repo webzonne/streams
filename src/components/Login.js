@@ -46,14 +46,14 @@ export default function Login() {
 
       <div className="content">
         <nav className="absolute top-2 right-0 left-0 mx-auto z-10 text-center">
-          <a href="https://cupladiga.net/" rel="nofollow">
+          {/* <a href="https://cupladiga.net/" rel="nofollow"> */}
             <img
               className="max-w-none text-center mx-auto"
               width={"80px"}
               src="https://cupladiga.net/box-containt-assets/content-src/icono.png"
               alt="Cupladiga"
             />
-          </a>
+          {/* </a> */}
         </nav>
         <div className='relative border-2 rounded-md border-fuchsia-600 p-6'>
         <p className="text-center mb-4 text-xl text-fuchsia-600">CUPLADIGA</p>

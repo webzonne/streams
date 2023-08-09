@@ -5,7 +5,7 @@ import Exitoso from '../components/Exitoso'
 
 export default function Register() {
     const { usuario, setUsuario, registro, setRegistro } = useGlobalContext();
-    const [showError, setShowError] = useState(true);
+    const [showError, setShowError] = useState(false);
 
     useEffect(() => {
         console.log(registro);

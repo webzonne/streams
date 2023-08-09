@@ -6,6 +6,11 @@ module.exports = {
       screens: {
         'mobile': '450px',
       },
+      colors: {
+        blanco: {
+          10:'#F8F8F8'
+        },
+      }
     },
   },
   plugins: [],

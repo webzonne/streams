@@ -17,15 +17,15 @@ export default function Mensaje({message, onClose}) {
         onClose();
       };
   return (
-    <div>
+    <div className='relative'>
           {visible && (
         <div
-          className="fixed top-0 right-0 m-4 p-4 bg-green-500 text-white rounded shadow"
+          className="fixed z-20 top-0 right-0 m-4 p-4 bg-green-500 text-white rounded shadow"
           style={{ animation: 'slide-down 1s ease' }}
         >
           <p>{message}</p>
           <button
-            className="ml-2 text-white font-semibold"
+            className="absolute -top-3 -right-1 ml-2 text-gray-600 text-xl font-bold"
             onClick={handleClose}
           >
             X

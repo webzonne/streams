@@ -1,9 +1,11 @@
-import React, {useEffect } from 'react'
+import React, {useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../context/TaskContext';
+import Exitoso from '../components/Exitoso'
 
 export default function Register() {
     const { usuario, setUsuario, registro, setRegistro } = useGlobalContext();
+    const [showError, setShowError] = useState(false);
 
     useEffect(() => {
         console.log(registro);
@@ -17,7 +19,10 @@ export default function Register() {
     setRegistro([...registro, user]);
     localStorage.setItem('registro', JSON.stringify([...registro, usuario]))
     console.log(registro)
-    navigate('/');
+    setShowError(true)
+    setTimeout(() => {
+      navigate('/');
+    }, 3000);
   }
 
   const handleChange = (e)=>{
@@ -27,6 +32,14 @@ export default function Register() {
   }
   
   return (
+    <>
+    {showError && (
+        <Exitoso
+          message="Su registro fue exitoso"
+          onClose={() => setShowError(false)}
+        />
+      )}
+  
 <div className="flex h-screen justify-center items-center">
       <div className="content">
         <nav className="text-center">
@@ -98,5 +111,6 @@ export default function Register() {
       <p className='text-gray-500 text-center mt-4'>Explora todo lo que tenemos para ti</p>
       </div>
     </div>
+    </>
   )
 }

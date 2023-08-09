@@ -5,7 +5,7 @@ export default function Footer() {
     <div>
       <div className="flex justify-around items-center bg-gray-200 h-[100px]">
         <div>
-          <p>https://cupladiga.net/</p>
+          <p> all right © - capitalclubglobal.com</p>
         </div>
         <div>
             <p>Desarrollado por - Viwhite</p>

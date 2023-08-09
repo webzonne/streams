@@ -77,6 +77,7 @@ export default function Register() {
                     placeholder="Ingresa tu usuario"
                     aria-label="email"
                     onChange={handleChange}
+                    required
                   />
                   <br />
                   <label htmlFor="inputPassword5" className="text-white ">
@@ -91,6 +92,7 @@ export default function Register() {
                     placeholder="*******"
                     aria-describedby="password"
                     onChange={handleChange}
+                    required
                   />
                   <br />
                   

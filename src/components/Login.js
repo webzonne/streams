@@ -31,8 +31,7 @@ export default function Login() {
     if (user) {
       navigate('/home');
     } else {
-      setShowError(true);
-      setTimeout(() => setShowError(false), 3000); // Mostrar el mensaje de error durante 3 segundos
+      setShowError(true); 
     }
   };
   const handlePass = ()=>{
@@ -48,7 +47,7 @@ export default function Login() {
 <div className="flex mt-12 h-screen justify-center items-center">
 
       <div className="content">
-        <nav className="absolute top-2 right-0 left-0 mx-auto z-10 text-center">
+        <nav className="w-1/4 absolute block-inline top-2 right-0 left-0 mx-auto z-10 text-center">
           {/* <a href="https://cupladiga.net/" rel="nofollow"> */}
             <img
               className="max-w-none text-center mx-auto"
@@ -79,6 +78,7 @@ export default function Login() {
                     placeholder="Ingresa tu usuario"
                     aria-label="usuario"
                     onChange={handleChange}
+                    required
                   />
                   <br />
                   <label htmlFor="inputPassword5" className="text-white ">
@@ -93,6 +93,7 @@ export default function Login() {
                     placeholder="*******"
                     aria-describedby="password"
                     onChange={handleChange}
+                    required
                   />
                   <br />
                   <div onClick={handlePass} className="cursor-pointer text-white mb-4">Olvido de clave</div>
